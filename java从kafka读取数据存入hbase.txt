@@ -1,0 +1,40 @@
+1 环境需求，安装hbase需要依赖hadoop，所以需要安装hadoop环境
+
+安装hadoop
+	首先需要完成主节点到从节点的ssh免秘钥登入
+		ssh-keygen -t rsa -N "" 生成ssh秘钥，
+		然后在各个从节点上mkdir ~/.ssh   cat >> ~/.ssh/authorized_keys
+		然后把主节点的生成的秘钥信息写入从节点的authorized_keys
+	
+	配置hadoop
+		hadoop目录/etc/hadoop/hadoop-env.sh  加上java环境变量 JAVA_HOME=/usr/java/jdk1.8.0_25（类似）
+		修改core-site.html
+
+		修改hdfs-site.xml
+		
+		修改mapred-site.xml
+		
+		同步所有的从节点，
+			rsync -avz /hadoop/hadoop2.6/ slave1:/hadoop/hadoop2.6/
+
+		在主节点上启动hadoop，第一次启动的时候需要format一下，bin/hdfs namenode -format 
+		
+
+安装zookeeper
+	修改zoo.cfg
+		dataDir修改为自己设置的路径，dataDir=/usr/local/ZooKeeper/var/data
+		然后在该路径是创建myid文件，主节点写1，从节点依次类推
+		加入
+			server.1=master:2888:3888
+			server.2=slave1:2888:3888
+			server.3=slave2:2888:3888
+		master,slave1,slave2这些为主机名
+		
+	然后同步从节点，启动zookeeper
+	
+
+安装hbase
+	在hbase安装目录里面修改hbase-env.sh
+		修改javahome，JAVA_HOME=/usr/java/jdk1.8.0/
+		
+		修改hbase-site.xml
