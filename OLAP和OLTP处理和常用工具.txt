@@ -1,0 +1,21 @@
+OLAP（联机分析处理）：单次查询返回数据量巨大，服务器端进行的处理复杂，经常包含上卷(从细粒度数据向高层的聚合)、下钻(将汇总数据拆分到更细节的数据)类似的操作
+
+OLTP（联机事务处理）：单次查询返回数据量小，但是经常会涉及服务器端简单的聚合操作，要求查询响应速度快，一般应用于在线处理
+
+
+
+Elasticsearch  是一种基于 文档 的 底层使用 Lucene  进行检索的分布式NoSql 集群。Elasticsearch  检索大量文档类数据响应速度很快，更够为 在线 OLTP 提供支持。类似的大数据开源系统有 Solr。
+两者的区别如下
+Elasticsearch是分布式的。不需要其他组件，分发是实时的，被叫做”Push replication” 并且完全支持 Apache Lucene 的接近实时的搜索；
+solr建立索引时，搜索效率下降，实时索引搜索效率不高；
+solr随着数据量的增加，Solr的搜索效率会变得更低，而Elasticsearch却不会有明显变化
+所以， Solr的架构不适合实时搜索的应用，也就不适合 OLTP 处理
+
+Elasticsearch 需要比较多的内存
+
+Impala 是 Cloudera 公司主导开发的新型查询系统，它提供 SQL 语义，能查询存储在 Hadoop 的 Hdfs 和 Hbase 中的 PB 级大数据。已有 的 Hive 系统虽然也提供了 SQL 语义，但由于 Hive 底层执行使用的是 MapReduce 引擎，仍然是一个批处理过程，难以满足查询的交互性。相比之 下，Impala 的最大特点就是它的快速。
+
+所以， Impala 使得在 TB 甚至 PB 级数据上进行  OLTP  分析成为可能。
+
+
+
