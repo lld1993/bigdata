@@ -1,0 +1,5 @@
+com\hbase\jd\App.class
+com\hbase\jd\JdConsumer.class
+com\hbase\jd\JdProducer.class
+com\hbase\jd\KafkaConsumer.class
+com\hbase\jd\HanldMessageThread.class
