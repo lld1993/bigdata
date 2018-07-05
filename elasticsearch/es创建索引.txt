@@ -1,0 +1,6 @@
+1 es 创建索引命令demo
+	curl -XPUT 'http://116.196.93.199:9201/testindex/employee/5' -d '{"first_name" :  "Tom","last_name" :"Tanglaoya","age" :50,"about" : "I like singing","account":"twiter","interests":[ "car" ]}'
+		
+2 es 查询demo
+	直接在浏览器或者使用curl
+		http://116.196.93.199:9201/testindex/employee/_search?q=last_name:Smith
