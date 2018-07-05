@@ -12,8 +12,8 @@ public class JdProducer {
 
     public void createProducer(){
         Properties props = new Properties();
-        props.put("bootstrap.servers", "116.196.93.199:19092,116.196.93.196:19092,116.196.93.183:19092");
-//        props.put("bootstrap.servers", "116.196.93.199:19092,116.196.93.196:19092,116.196.93.183:19092");
+        props.put("bootstrap.servers", "");
+//        props.put("bootstrap.servers", "");
         props.put("acks", "all");
         props.put("retries", 0);
         props.put("batch.size", 16384);

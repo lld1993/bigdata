@@ -13,7 +13,7 @@ public class JdConsumer
     public void testmain()
     {
         Properties props = new Properties();
-        props.put("bootstrap.servers", "172.19.8.115:9092,172.19.8.117:9092,172.19.8.119:9092,172.19.8.44:9092,172.19.8.46:9092,172.19.8.50:9092,172.19.8.52:9092,172.19.8.54:9092,172.19.8.56:9092,172.19.8.69:9092");
+        props.put("bootstrap.servers", "");
         props.put("group.id", "testw");
         props.put("enable.auto.commit", "true");
         props.put("auto.commit.interval.ms", "1000");

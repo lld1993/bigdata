@@ -24,8 +24,8 @@ public class KafkaConsumer {
     public void testMain() {
 
         Properties props = new Properties();
-        props.put("zookeeper.connect", "116.196.93.199:12181,116.196.93.196:12181,116.196.93.183:12181");
-        props.put("bootstrap.servers", "116.196.93.199:19092,116.196.93.196:19092,116.196.93.183:19092");
+        props.put("zookeeper.connect", "");
+        props.put("bootstrap.servers", "");
         props.put("group.id", "group123_info");
         props.put("zookeeper.session.timeout.ms", "4000");
         props.put("zookeeper.sync.time.ms", "200");
