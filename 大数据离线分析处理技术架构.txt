@@ -1,1 +1,0 @@
-hdfs + mapreduce + hiveÊı¾İ²Ö¿â
